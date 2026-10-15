@@ -98,6 +98,8 @@ gap: 12px;
     scrollbar-width: none;
   }
   .row .v::-webkit-scrollbar { display: none; }
+  .row.crypto { gap: 8px; }
+  .row.crypto .k { min-width: auto; }
   .content details {
     border: 1px solid #2a2a2a;
     margin-top: 12px;
@@ -141,7 +143,11 @@ footer {
     text-align: center;
   }
 @media (max-width: 480px) {
-    .row .k { min-width: 110px; font-size: 0.85rem; }
+    .row {
+      flex-wrap: wrap;
+      gap: 2px 8px;
+    }
+    .row .k, .row.crypto .k { min-width: 100%; font-size: 0.85rem; }
     .row .v { font-size: 0.85rem; }
   }
 </style>
@@ -198,13 +204,13 @@ footer {
         <details>
           <summary>Донаты в криптовалюте</summary>
           <div class="content">
-            <div class="row"><span class="k">$TON</span><span class="v mono">EQAyvZywyXNN6nDhLYBaLRauS6KbthZV64Eb8XDEUBhq-MTm</span><button class="copy" data-copy="EQAyvZywyXNN6nDhLYBaLRauS6KbthZV64Eb8XDEUBhq-MTm" title="Копировать">⧉</button></div>
-            <div class="row"><span class="k">$USDT (TRC20)</span><span class="v mono">TRnMRuScLFSjBgYFrdmt3oy6Mh2c6jvdKs</span><button class="copy" data-copy="TRnMRuScLFSjBgYFrdmt3oy6Mh2c6jvdKs" title="Копировать">⧉</button></div>
-            <div class="row"><span class="k">$ETH</span><span class="v mono">0x0955F042e0Ff38a9930FB02e1CF7f48E3A899394</span><button class="copy" data-copy="0x0955F042e0Ff38a9930FB02e1CF7f48E3A899394" title="Копировать">⧉</button></div>
-            <div class="row"><span class="k">$BTC</span><span class="v mono">18HE8KU75W8rMc2SU3ZgcejxwmhSY2HtE1 <span class="dim">(от 0.00002 BTC)</span></span><button class="copy" data-copy="18HE8KU75W8rMc2SU3ZgcejxwmhSY2HtE1" title="Копировать">⧉</button></div>
-            <div class="row"><span class="k">CryptoBot</span><span class="v"><a href="https://t.me/send?start=IVdFPdcZxH6y" target="_blank" rel="noopener">t.me/send?start=IVdFPdcZxH6y</a></span></div>
-            <div class="row"><span class="k">xRocket $TON</span><span class="v"><a href="https://t.me/xrocket?start=inv_L0Z6BAhObxH07PY" target="_blank" rel="noopener">t.me/xrocket?start=inv_L0Z6BAhObxH07PY</a></span></div>
-            <div class="row"><span class="k">xRocket $USDT</span><span class="v"><a href="https://t.me/xrocket?start=inv_cjsxgV8aas2VZfc" target="_blank" rel="noopener">t.me/xrocket?start=inv_cjsxgV8aas2VZfc</a></span></div>
+            <div class="row crypto"><span class="k">$TON</span><span class="v mono">EQAyvZywyXNN6nDhLYBaLRauS6KbthZV64Eb8XDEUBhq-MTm</span><button class="copy" data-copy="EQAyvZywyXNN6nDhLYBaLRauS6KbthZV64Eb8XDEUBhq-MTm" title="Копировать">⧉</button></div>
+            <div class="row crypto"><span class="k">$USDT (TRC20)</span><span class="v mono">TRnMRuScLFSjBgYFrdmt3oy6Mh2c6jvdKs</span><button class="copy" data-copy="TRnMRuScLFSjBgYFrdmt3oy6Mh2c6jvdKs" title="Копировать">⧉</button></div>
+            <div class="row crypto"><span class="k">$ETH</span><span class="v mono">0x0955F042e0Ff38a9930FB02e1CF7f48E3A899394</span><button class="copy" data-copy="0x0955F042e0Ff38a9930FB02e1CF7f48E3A899394" title="Копировать">⧉</button></div>
+            <div class="row crypto"><span class="k">$BTC</span><span class="v mono">18HE8KU75W8rMc2SU3ZgcejxwmhSY2HtE1</span><button class="copy" data-copy="18HE8KU75W8rMc2SU3ZgcejxwmhSY2HtE1" title="Копировать">⧉</button></div>
+            <div class="row crypto"><span class="k">CryptoBot</span><span class="v"><a href="https://t.me/send?start=IVdFPdcZxH6y" target="_blank" rel="noopener">t.me/send?start=IVdFPdcZxH6y</a></span></div>
+            <div class="row crypto"><span class="k">xRocket $TON</span><span class="v"><a href="https://t.me/xrocket?start=inv_L0Z6BAhObxH07PY" target="_blank" rel="noopener">t.me/xrocket?start=inv_L0Z6BAhObxH07PY</a></span></div>
+            <div class="row crypto"><span class="k">xRocket $USDT</span><span class="v"><a href="https://t.me/xrocket?start=inv_cjsxgV8aas2VZfc" target="_blank" rel="noopener">t.me/xrocket?start=inv_cjsxgV8aas2VZfc</a></span></div>
           </div>
         </details>
       </div>
