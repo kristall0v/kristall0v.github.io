@@ -87,9 +87,17 @@ gap: 12px;
     display: flex;
     gap: 10px;
     padding: 4px 0;
+    align-items: center;
   }
   .row .k { color: var(--dim); min-width: 200px; flex-shrink: 0; }
-  .row .v { word-break: break-all; }
+  .row .v {
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .row .v::-webkit-scrollbar { display: none; }
   .content details {
     border: 1px solid #2a2a2a;
     margin-top: 12px;
@@ -109,7 +117,7 @@ gap: 12px;
     border-bottom: 1px solid #444;
   }
   a:hover { border-bottom-color: var(--fg); }
-  .mono { word-break: break-all; }
+  .mono { font-family: inherit; }
   .dim { color: var(--dim); }
   .copy {
     background: none;
@@ -126,11 +134,15 @@ gap: 12px;
   }
   .copy:hover { color: var(--fg); border-color: var(--fg); }
   .copy.done { color: #4caf50; border-color: #4caf50; }
-  footer {
+footer {
     margin-top: 32px;
     color: var(--dim);
     font-size: 0.8rem;
     text-align: center;
+  }
+@media (max-width: 480px) {
+    .row .k { min-width: 110px; font-size: 0.85rem; }
+    .row .v { font-size: 0.85rem; }
   }
 </style>
 </head>
