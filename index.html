@@ -267,6 +267,21 @@ footer {
         });
       })(btns[i]);
     }
+
+    var seq = "";
+    document.addEventListener("keydown", function (e) {
+      if (e.repeat) return;
+      if (e.key && e.key.length === 1) {
+        seq = (seq + e.key.toLowerCase()).slice(-3);
+        if (seq === "egg") {
+          var nameEl = document.querySelector(".name");
+          if (nameEl && !nameEl.dataset.egg) {
+            nameEl.dataset.egg = "1";
+            nameEl.textContent = nameEl.textContent.replace(/е/g, "🥚");
+          }
+        }
+      }
+    });
   })();
 </script>
 </body>
