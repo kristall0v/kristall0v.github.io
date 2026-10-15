@@ -33,14 +33,7 @@
     letter-spacing: 0.02em;
     display: flex;
     align-items: center;
-    gap: 12px;
-  }
-  .flag {
-    display: inline-block;
-    width: 30px;
-    height: 20px;
-    border: 1px solid #2a2a2a;
-    flex-shrink: 0;
+gap: 12px;
   }
   .nick {
     color: var(--dim);
@@ -117,6 +110,22 @@
   }
   a:hover { border-bottom-color: var(--fg); }
   .mono { word-break: break-all; }
+  .dim { color: var(--dim); }
+  .copy {
+    background: none;
+    border: 1px solid #333;
+    color: var(--dim);
+    font-family: inherit;
+    font-size: 0.75rem;
+    line-height: 1;
+    padding: 3px 7px;
+    cursor: pointer;
+    border-radius: 3px;
+    flex-shrink: 0;
+    align-self: center;
+  }
+  .copy:hover { color: var(--fg); border-color: var(--fg); }
+  .copy.done { color: #4caf50; border-color: #4caf50; }
   footer {
     margin-top: 32px;
     color: var(--dim);
@@ -127,7 +136,7 @@
 </head>
 <body>
   <main class="card">
-    <h1 class="name">Алексей <svg class="flag" viewBox="0 0 3 2" aria-label="Флаг России" role="img"><rect width="3" height="2" fill="#ffffff"/><rect y="0.667" width="3" height="0.666" fill="#0039a6"/><rect y="1.333" width="3" height="0.667" fill="#d52b1e"/></svg></h1>
+    <h1 class="name">Алексей</h1>
     <div class="nick">@kristall0v</div>
     <div class="status">Deus ex machina</div>
 
@@ -148,7 +157,7 @@
         <div class="row"><span class="k">Telegram</span><span class="v"><a href="https://t.me/kristall0v" target="_blank" rel="noopener">t.me/kristall0v</a></span></div>
         <div class="row"><span class="k">VK</span><span class="v"><a href="https://vk.com/kristall0v" target="_blank" rel="noopener">vk.com/kristall0v</a></span></div>
         <div class="row"><span class="k">Lolz</span><span class="v"><a href="https://lolz.live/kristall0v" target="_blank" rel="noopener">lolz.live/kristall0v</a></span></div>
-        <div class="row"><span class="k">Discord</span><span class="v">kristall0v (krista11ov#8272)</span></div>
+        <div class="row"><span class="k">Discord</span><span class="v">kristall0v <span class="dim">(krista11ov#8272)</span></span><button class="copy" data-copy="kristall0v" title="Копировать">⧉</button></div>
         <div class="row"><span class="k">Steam</span><span class="v"><a href="https://steamcommunity.com/id/kristall0v/" target="_blank" rel="noopener">steamcommunity.com/id/kristall0v/</a></span></div>
         <div class="row"><span class="k">GitHub</span><span class="v"><a href="https://github.com/kristall0v" target="_blank" rel="noopener">github.com/kristall0v</a></span></div>
       </div>
@@ -166,21 +175,21 @@
     <details>
       <summary>Донаты</summary>
       <div class="content">
-        <div class="row"><span class="k">Сбер</span><span class="v mono">2202 2019 0347 7046</span></div>
-        <div class="row"><span class="k">Т-банк</span><span class="v mono">5536 9141 2116 5033</span></div>
-        <div class="row"><span class="k">Альфа-банк</span><span class="v mono">2200 1529 6624 3704</span></div>
-        <div class="row"><span class="k">ВТБ</span><span class="v mono">2200 2480 7173 6747</span></div>
-        <div class="row"><span class="k">Совкомбанк</span><span class="v mono">2200 2711 6560 8101</span></div>
-        <div class="row"><span class="k">ЮMoney</span><span class="v mono">4100 1187 0902 9707</span></div>
-        <div class="row"><span class="k">Яндекс Pay</span><span class="v mono">2204 3101 1235 8505</span></div>
-        <div class="row"><span class="k">Ozon Банк</span><span class="v mono">2204 2402 2583 5950</span></div>
+        <div class="row"><span class="k">Сбер</span><span class="v mono">2202 2019 0347 7046</span><button class="copy" data-copy="2202 2019 0347 7046" title="Копировать">⧉</button></div>
+        <div class="row"><span class="k">Т-банк</span><span class="v mono">5536 9141 2116 5033</span><button class="copy" data-copy="5536 9141 2116 5033" title="Копировать">⧉</button></div>
+        <div class="row"><span class="k">Альфа-банк</span><span class="v mono">2200 1529 6624 3704</span><button class="copy" data-copy="2200 1529 6624 3704" title="Копировать">⧉</button></div>
+        <div class="row"><span class="k">ВТБ</span><span class="v mono">2200 2480 7173 6747</span><button class="copy" data-copy="2200 2480 7173 6747" title="Копировать">⧉</button></div>
+        <div class="row"><span class="k">Совкомбанк</span><span class="v mono">2200 2711 6560 8101</span><button class="copy" data-copy="2200 2711 6560 8101" title="Копировать">⧉</button></div>
+        <div class="row"><span class="k">ЮMoney</span><span class="v mono">4100 1187 0902 9707</span><button class="copy" data-copy="4100 1187 0902 9707" title="Копировать">⧉</button></div>
+        <div class="row"><span class="k">Яндекс Pay</span><span class="v mono">2204 3101 1235 8505</span><button class="copy" data-copy="2204 3101 1235 8505" title="Копировать">⧉</button></div>
+        <div class="row"><span class="k">Ozon Банк</span><span class="v mono">2204 2402 2583 5950</span><button class="copy" data-copy="2204 2402 2583 5950" title="Копировать">⧉</button></div>
         <details>
           <summary>Донаты в криптовалюте</summary>
           <div class="content">
-            <div class="row"><span class="k">$TON</span><span class="v mono">EQAyvZywyXNN6nDhLYBaLRauS6KbthZV64Eb8XDEUBhq-MTm</span></div>
-            <div class="row"><span class="k">$USDT (TRC20)</span><span class="v mono">TRnMRuScLFSjBgYFrdmt3oy6Mh2c6jvdKs</span></div>
-            <div class="row"><span class="k">$ETH</span><span class="v mono">0x0955F042e0Ff38a9930FB02e1CF7f48E3A899394</span></div>
-            <div class="row"><span class="k">$BTC</span><span class="v mono">18HE8KU75W8rMc2SU3ZgcejxwmhSY2HtE1 (от 0.00002 BTC)</span></div>
+            <div class="row"><span class="k">$TON</span><span class="v mono">EQAyvZywyXNN6nDhLYBaLRauS6KbthZV64Eb8XDEUBhq-MTm</span><button class="copy" data-copy="EQAyvZywyXNN6nDhLYBaLRauS6KbthZV64Eb8XDEUBhq-MTm" title="Копировать">⧉</button></div>
+            <div class="row"><span class="k">$USDT (TRC20)</span><span class="v mono">TRnMRuScLFSjBgYFrdmt3oy6Mh2c6jvdKs</span><button class="copy" data-copy="TRnMRuScLFSjBgYFrdmt3oy6Mh2c6jvdKs" title="Копировать">⧉</button></div>
+            <div class="row"><span class="k">$ETH</span><span class="v mono">0x0955F042e0Ff38a9930FB02e1CF7f48E3A899394</span><button class="copy" data-copy="0x0955F042e0Ff38a9930FB02e1CF7f48E3A899394" title="Копировать">⧉</button></div>
+            <div class="row"><span class="k">$BTC</span><span class="v mono">18HE8KU75W8rMc2SU3ZgcejxwmhSY2HtE1 <span class="dim">(от 0.00002 BTC)</span></span><button class="copy" data-copy="18HE8KU75W8rMc2SU3ZgcejxwmhSY2HtE1" title="Копировать">⧉</button></div>
             <div class="row"><span class="k">CryptoBot</span><span class="v"><a href="https://t.me/send?start=IVdFPdcZxH6y" target="_blank" rel="noopener">t.me/send?start=IVdFPdcZxH6y</a></span></div>
             <div class="row"><span class="k">xRocket $TON</span><span class="v"><a href="https://t.me/xrocket?start=inv_L0Z6BAhObxH07PY" target="_blank" rel="noopener">t.me/xrocket?start=inv_L0Z6BAhObxH07PY</a></span></div>
             <div class="row"><span class="k">xRocket $USDT</span><span class="v"><a href="https://t.me/xrocket?start=inv_cjsxgV8aas2VZfc" target="_blank" rel="noopener">t.me/xrocket?start=inv_cjsxgV8aas2VZfc</a></span></div>
@@ -203,6 +212,43 @@
     var word = (n10 === 1 && n100 !== 11) ? "год" :
                (n10 >= 2 && n10 <= 4 && (n100 < 12 || n100 > 14)) ? "года" : "лет";
     document.getElementById("age").textContent = age + " " + word;
+
+    function copyText(text, btn) {
+      function done() {
+        btn.textContent = "✓";
+        btn.classList.add("done");
+        setTimeout(function () {
+          btn.textContent = "⧉";
+          btn.classList.remove("done");
+        }, 1200);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () {
+          fallback();
+        });
+      } else {
+        fallback();
+      }
+      function fallback() {
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand("copy"); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      }
+    }
+
+    var btns = document.querySelectorAll(".copy");
+    for (var i = 0; i < btns.length; i++) {
+      (function (btn) {
+        btn.addEventListener("click", function () {
+          copyText(btn.getAttribute("data-copy"), btn);
+        });
+      })(btns[i]);
+    }
   })();
 </script>
 </body>
