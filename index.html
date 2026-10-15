@@ -268,16 +268,54 @@ footer {
       })(btns[i]);
     }
 
-    var seq = "";
-    document.addEventListener("keydown", function (e) {
-      if (e.repeat) return;
-      if (e.key && e.key.length === 1) {
-        seq = (seq + e.key.toLowerCase()).slice(-3);
-        if (seq === "egg") {
+    function findK(text) {
+      var ks = document.querySelectorAll(".row .k");
+      for (var i = 0; i < ks.length; i++) {
+        if (ks[i].textContent.trim() === text) return ks[i];
+      }
+      return null;
+    }
+    function findSummary(text) {
+      var ss = document.querySelectorAll("summary");
+      for (var i = 0; i < ss.length; i++) {
+        if (ss[i].textContent.trim() === text) return ss[i];
+      }
+      return null;
+    }
+    function addEmoji(el, emoji, pos) {
+      if (!el || el.dataset.egg) return;
+      el.dataset.egg = "1";
+      if (pos === "before") el.textContent = emoji + " " + el.textContent;
+      else el.textContent = el.textContent + " " + emoji;
+    }
+    var eggs = [
+      { code: "egg", fn: function () {
           var nameEl = document.querySelector(".name");
           if (nameEl && !nameEl.dataset.egg) {
             nameEl.dataset.egg = "1";
             nameEl.textContent = nameEl.textContent.replace(/е/g, "🥚");
+          }
+        } },
+      { code: "kristall", get: function () { return document.querySelector(".nick"); }, emoji: "💎", pos: "before" },
+      { code: "deus", get: function () { return document.querySelector(".status"); }, emoji: "🤖", pos: "before" },
+      { code: "capricorn", get: function () { return findK("Козерог"); }, emoji: "🐐", pos: "after" },
+      { code: "istj", get: function () { return findK("ISTJ"); }, emoji: "🧠", pos: "after" },
+      { code: "money", get: function () { return findSummary("Донаты"); }, emoji: "💸", pos: "after" },
+      { code: "ton", get: function () { return findK("$TON"); }, emoji: "🚀", pos: "after" },
+      { code: "btc", get: function () { return findK("$BTC"); }, emoji: "🪙", pos: "after" },
+      { code: "eth", get: function () { return findK("$ETH"); }, emoji: "⛓️", pos: "after" },
+      { code: "telegram", get: function () { return findK("Telegram"); }, emoji: "✈️", pos: "after" },
+      { code: "github", get: function () { return findK("GitHub"); }, emoji: "🐙", pos: "after" }
+    ];
+    var seq = "";
+    document.addEventListener("keydown", function (e) {
+      if (e.repeat) return;
+      if (e.key && e.key.length === 1) {
+        seq = (seq + e.key.toLowerCase()).slice(-12);
+        for (var i = 0; i < eggs.length; i++) {
+          if (seq.indexOf(eggs[i].code) !== -1) {
+            if (eggs[i].fn) eggs[i].fn();
+            else addEmoji(eggs[i].get(), eggs[i].emoji, eggs[i].pos);
           }
         }
       }
