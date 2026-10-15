@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>kristall0v — визитка</title>
+<style>
+  :root {
+    --bg: #000000;
+    --fg: #ffffff;
+    --dim: #8a8a8a;
+    --accent: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: "JetBrains Mono", "Fira Code", Consolas, "Courier New", monospace;
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 48px 20px;
+  }
+  .card {
+    width: 100%;
+    max-width: 640px;
+  }
+  .name {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .nick {
+    color: var(--dim);
+    font-size: 1.1rem;
+    margin-top: 4px;
+  }
+  .status {
+    margin-top: 12px;
+    font-size: 0.95rem;
+    color: var(--fg);
+    border-left: 3px solid var(--fg);
+    padding-left: 10px;
+  }
+  .divider {
+    border: none;
+    border-top: 1px solid #2a2a2a;
+    margin: 28px 0;
+  }
+  details {
+    border-bottom: 1px solid #2a2a2a;
+  }
+  details:first-of-type { border-top: 1px solid #2a2a2a; }
+  summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 14px 0;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: "+";
+    font-size: 1.2rem;
+    color: var(--dim);
+    transition: transform 0.2s;
+  }
+  details[open] summary::after {
+    content: "−";
+  }
+  .content {
+    padding: 0 0 18px 0;
+    font-size: 0.95rem;
+  }
+  .row {
+    display: flex;
+    gap: 10px;
+    padding: 4px 0;
+  }
+  .row .k { color: var(--dim); min-width: 130px; flex-shrink: 0; }
+  .row .v { word-break: break-all; }
+  a {
+    color: var(--fg);
+    text-decoration: none;
+    border-bottom: 1px solid #444;
+  }
+  a:hover { border-bottom-color: var(--fg); }
+  .mono { word-break: break-all; }
+  footer {
+    margin-top: 32px;
+    color: var(--dim);
+    font-size: 0.8rem;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <main class="card">
+    <h1 class="name">Алексей 🇷🇺</h1>
+    <div class="nick">@kristall0v</div>
+    <div class="status">Deus ex machina</div>
+
+    <hr class="divider">
+
+    <details>
+      <summary>Дополнительная информация</summary>
+      <div class="content">
+        <div class="row"><span class="k">Возраст</span><span class="v" id="age">—</span></div>
+        <div class="row"><span class="k">Знак зодиака</span><span class="v">Козерог</span></div>
+        <div class="row"><span class="k">Тип личности</span><span class="v">ISTJ</span></div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Контакты</summary>
+      <div class="content">
+        <div class="row"><span class="k">Telegram</span><span class="v"><a href="https://t.me/kristall0v" target="_blank" rel="noopener">t.me/kristall0v</a></span></div>
+        <div class="row"><span class="k">VK</span><span class="v"><a href="https://vk.com/kristall0v" target="_blank" rel="noopener">vk.com/kristall0v</a></span></div>
+        <div class="row"><span class="k">Lolz</span><span class="v"><a href="https://lolz.live/kristall0v" target="_blank" rel="noopener">lolz.live/kristall0v</a></span></div>
+        <div class="row"><span class="k">Discord</span><span class="v">kristall0v (krista11ov#8272)</span></div>
+        <div class="row"><span class="k">Steam</span><span class="v"><a href="https://steamcommunity.com/id/kristall0v/" target="_blank" rel="noopener">steamcommunity.com/id/kristall0v/</a></span></div>
+        <div class="row"><span class="k">GitHub</span><span class="v"><a href="https://github.com/kristall0v" target="_blank" rel="noopener">github.com/kristall0v</a></span></div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Проекты</summary>
+      <div class="content">
+        <div class="row"><span class="k">Анонимные вопросы</span><span class="v"><a href="https://t.me/incques_bot" target="_blank" rel="noopener">@incques_bot</a></span></div>
+        <div class="row"><span class="k">Искусство</span><span class="v"><a href="https://t.me/PentaChrome_bot" target="_blank" rel="noopener">@PentaChrome_bot</a></span></div>
+        <div class="row"><span class="k">Фильмы и сериалы</span><span class="v"><a href="https://t.me/yoyorobot_bot" target="_blank" rel="noopener">@yoyorobot_bot</a></span></div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Донаты</summary>
+      <div class="content">
+        <div class="row"><span class="k">Сбер</span><span class="v mono">2202 2019 0347 7046</span></div>
+        <div class="row"><span class="k">Т-банк</span><span class="v mono">5536 9141 2116 5033</span></div>
+        <div class="row"><span class="k">Альфа-банк</span><span class="v mono">2200 1529 6624 3704</span></div>
+        <div class="row"><span class="k">ВТБ</span><span class="v mono">2200 2480 7173 6747</span></div>
+        <div class="row"><span class="k">Совкомбанк</span><span class="v mono">2200 2711 6560 8101</span></div>
+        <div class="row"><span class="k">ЮMoney</span><span class="v mono">4100 1187 0902 9707</span></div>
+        <div class="row"><span class="k">Яндекс Pay</span><span class="v mono">2204 3101 1235 8505</span></div>
+        <div class="row"><span class="k">Ozon Банк</span><span class="v mono">2204 2402 2583 5950</span></div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Донаты в криптовалюте</summary>
+      <div class="content">
+        <div class="row"><span class="k">$TON</span><span class="v mono">EQAyvZywyXNN6nDhLYBaLRauS6KbthZV64Eb8XDEUBhq-MTm</span></div>
+        <div class="row"><span class="k">$USDT (TRC20)</span><span class="v mono">TRnMRuScLFSjBgYFrdmt3oy6Mh2c6jvdKs</span></div>
+        <div class="row"><span class="k">$ETH</span><span class="v mono">0x0955F042e0Ff38a9930FB02e1CF7f48E3A899394</span></div>
+        <div class="row"><span class="k">$BTC</span><span class="v mono">18HE8KU75W8rMc2SU3ZgcejxwmhSY2HtE1 (от 0.00002 BTC)</span></div>
+        <div class="row"><span class="k">CryptoBot</span><span class="v"><a href="https://t.me/send?start=IVdFPdcZxH6y" target="_blank" rel="noopener">t.me/send?start=IVdFPdcZxH6y</a></span></div>
+        <div class="row"><span class="k">xRocket $TON</span><span class="v"><a href="https://t.me/xrocket?start=inv_L0Z6BAhObxH07PY" target="_blank" rel="noopener">t.me/xrocket?start=inv_L0Z6BAhObxH07PY</a></span></div>
+        <div class="row"><span class="k">xRocket $USDT</span><span class="v"><a href="https://t.me/xrocket?start=inv_cjsxgV8aas2VZfc" target="_blank" rel="noopener">t.me/xrocket?start=inv_cjsxgV8aas2VZfc</a></span></div>
+      </div>
+    </details>
+
+    <footer>© kristall0v · 2026</footer>
+  </main>
+
+<script>
+  (function () {
+    var birth = new Date(2003, 11, 22);
+    var now = new Date();
+    var age = now.getFullYear() - birth.getFullYear();
+    var m = now.getMonth() - birth.getMonth();
+    if (m < 0 || (m === 0 && now.getDate() < birth.getDate())) age--;
+    document.getElementById("age").textContent = age + " лет";
+  })();
+</script>
+</body>
+</html>
